@@ -23,6 +23,7 @@ defaultContentLanguageInSubdir = false
   BookRepo = "https://github.com/PawelSroczynski/enklava-docs"
   BookDateFormat = "2006-01-02"
   BookComments = false
+  BookSection = "/"
 
 [markup.goldmark.renderer]
   unsafe = true
