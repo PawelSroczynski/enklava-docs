@@ -131,6 +131,11 @@ body {
     outline-offset: 2px;
     border-radius: 3px;
   }
+
+  // Tytuł strony w headerze mobile — musi być jasny
+  h3, h2, h1, span, p {
+    color: #F0F0F0 !important;
+  }
 }
 
 // --- Content card ---
