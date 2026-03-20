@@ -1,0 +1,440 @@
+// =============================================================================
+// Custom theme — matches host-md.py style from enklava.co/files/
+// Colors: #2F3233 (dark), #F2F2F2 (bg), #4DAF7C (accent), #E0E0E0 (border)
+// =============================================================================
+
+// --- Base typography & body ---
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #F2F2F2;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+// --- Sidebar ---
+.book-menu {
+  background: #2F3233;
+
+  nav {
+    background: #2F3233;
+    // Better vertical rhythm between items
+    a {
+      display: block;
+      padding: 0.3rem 0.5rem;
+      border-radius: 4px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+  }
+
+  a {
+    color: #C0C0C0;
+    text-decoration: none;
+    transition: color 0.15s ease, background 0.15s ease;
+
+    &:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    &.active {
+      color: #4DAF7C;
+      font-weight: 600;
+      background: rgba(77, 175, 124, 0.12);
+    }
+  }
+
+  // Section headings (uppercase labels)
+  strong,
+  .book-menu-content > ul > li > span,
+  nav > ul > li > span,
+  nav > ul > li > label {
+    color: #4DAF7C;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  // Brand / site title
+  .book-brand {
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+
+    a {
+      color: #FFFFFF;
+      &:hover {
+        color: #E0E0E0;
+        background: transparent;
+      }
+    }
+  }
+
+  // Nested items — tighter indent
+  ul {
+    list-style: none;
+    padding-left: 0.75rem;
+  }
+
+  // Top-level list items — add small gap between sections
+  > ul > li {
+    margin-bottom: 0.1rem;
+  }
+
+  // Separator
+  hr {
+    border-color: rgba(255,255,255,0.08);
+    margin: 0.75rem 0;
+  }
+}
+
+// Book menu content wrapper
+.book-menu-content {
+  background: #2F3233;
+}
+
+// --- Header bar ---
+.book-header {
+  background: #2F3233;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: #F0F0F0;
+
+  a,
+  label,
+  svg,
+  .book-brand {
+    color: #F0F0F0;
+    transition: color 0.15s ease;
+  }
+
+  a:hover {
+    color: #FFFFFF;
+  }
+
+  // hamburger / menu icon
+  .material-icons,
+  svg {
+    fill: #F0F0F0;
+    color: #F0F0F0;
+  }
+
+  // Focus state for hamburger/menu
+  label:focus-within,
+  a:focus-visible {
+    outline: 2px solid #4DAF7C;
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+}
+
+// --- Content card ---
+.book-page {
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0,0,0,0.04);
+  padding: 2.5rem 3rem;
+  margin: 1.5rem;
+  // Smooth content max-width for readability
+  > *:not(pre):not(table) {
+    max-width: 72ch;
+  }
+}
+
+// --- Typography ---
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin-top: 1.75em;
+  margin-bottom: 0.6em;
+  line-height: 1.3;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1A1A1A;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: #1A1A1A;
+  letter-spacing: -0.01em;
+  border-left: 3px solid #4DAF7C;
+  padding-left: 0.75rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2A2A2A;
+  letter-spacing: -0.005em;
+}
+
+h4, h5, h6 {
+  color: #333333;
+  font-weight: 600;
+}
+
+p {
+  color: #333333;
+  line-height: 1.75;
+  margin-bottom: 1em;
+}
+
+// --- Links ---
+.book-page a,
+.markdown a {
+  color: #3d9c6e;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(61, 156, 110, 0.3);
+  transition: color 0.12s ease, border-color 0.12s ease;
+
+  &:hover {
+    color: #2e7a57;
+    border-bottom-color: #2e7a57;
+  }
+
+  &:visited {
+    color: #4a8c6a;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #4DAF7C;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+// --- Code ---
+// Inline code
+code {
+  background: #F0F4F2;
+  border: 1px solid #DDE8E4;
+  color: #2A5E48;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+}
+
+// Block code
+pre {
+  background: #1A1D1E;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  // Subtle scrollbar
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #1A1D1E;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+  }
+
+  code {
+    background: transparent;
+    border: none;
+    color: #D4D4D4;
+    font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    padding: 0;
+  }
+}
+
+// --- Tables ---
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #E0E0E0;
+  margin: 1.25rem 0;
+  font-size: 0.9375rem;
+
+  th {
+    background: #2F3233;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.03em;
+    padding: 0.65rem 1rem;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  td {
+    padding: 0.55rem 1rem;
+    border: 1px solid #E8E8E8;
+    color: #333333;
+    line-height: 1.5;
+  }
+
+  tr:nth-child(even) td {
+    background: #F9F9F9;
+  }
+
+  tr:hover td {
+    background: #F2F6F4;
+  }
+}
+
+// --- Blockquote ---
+blockquote {
+  border-left: 3px solid #4DAF7C;
+  background: rgba(77, 175, 124, 0.05);
+  color: #555555;
+  margin: 1.5rem 0;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+
+  p {
+    color: #555555;
+    margin: 0;
+    line-height: 1.65;
+  }
+}
+
+// --- HR ---
+hr {
+  border: none;
+  border-top: 1px solid #EBEBEB;
+  margin: 2rem 0;
+}
+
+// --- Muted / secondary text ---
+.book-meta,
+small,
+.muted {
+  color: #999999;
+  font-size: 0.875rem;
+}
+
+// --- TOC ---
+.book-toc {
+  a {
+    color: #999999;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    display: block;
+    padding: 0.15rem 0;
+    transition: color 0.12s ease;
+    border-left: 2px solid transparent;
+    padding-left: 0.6rem;
+
+    &:hover {
+      color: #4DAF7C;
+      border-left-color: rgba(77,175,124,0.4);
+    }
+
+    &.active {
+      color: #4DAF7C;
+      font-weight: 600;
+      border-left-color: #4DAF7C;
+    }
+  }
+}
+
+// --- Search input ---
+.book-search input {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #F0F0F0;
+  border-radius: 5px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  width: 100%;
+
+  &::placeholder {
+    color: #777777;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #4DAF7C;
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 0 0 2px rgba(77,175,124,0.2);
+  }
+}
+
+// --- Pagination ---
+.book-footer {
+  color: #999999;
+  border-top: 1px solid #EBEBEB;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.book-nav {
+  a {
+    color: #4DAF7C;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(77,175,124,0.3);
+    transition: color 0.12s ease;
+    &:hover {
+      color: #2e7a57;
+      text-decoration: none;
+      border-bottom-color: #2e7a57;
+    }
+  }
+}
+
+// --- Global focus visibility (accessibility) ---
+*:focus-visible {
+  outline: 2px solid #4DAF7C;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+// Remove default outline for mouse users
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// --- Smooth scroll ---
+html {
+  scroll-behavior: smooth;
+}
+
+// --- Responsive: remove card margin on mobile ---
+@media (max-width: 56rem) {
+  .book-page {
+    margin: 0.5rem;
+    padding: 1.5rem 1.25rem;
+    border-radius: 6px;
+
+    > *:not(pre):not(table) {
+      max-width: 100%;
+    }
+  }
+
+  h1 {
+    font-size: 1.625rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  pre {
+    padding: 1rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,28 @@
+baseURL = "https://enklava.co/docs/"
+title = "Enklava Docs"
+theme = "book"
+
+disablePathToLower = true
+defaultContentLanguage = "pl"
+defaultContentLanguageInSubdir = false
+
+[languages.pl]
+  languageName = "Polski"
+  weight = 1
+  contentDir = "content.pl"
+
+[languages.en]
+  languageName = "English"
+  weight = 2
+  contentDir = "content.en"
+
+[params]
+  BookTheme = "light"
+  BookToC = true
+  BookSearch = false
+  BookRepo = "https://github.com/PawelSroczynski/enklava-docs"
+  BookDateFormat = "2006-01-02"
+  BookComments = false
+
+[markup.goldmark.renderer]
+  unsafe = true
